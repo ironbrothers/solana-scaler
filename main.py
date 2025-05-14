@@ -2,9 +2,11 @@ from keep_alive import keep_alive
 import os
 import requests
 
+import requests
+
 def send_startup_message():
-    chat_id = os.getenv("TELEGRAM_CHAT_ID")
-    token = os.getenv("TELEGRAM_BOT_TOKEN")
+    chat_id = "5768567714"
+    token = "7863553125:AAFcUIKGAb4NhfbwelZ6HJ7OnTLgxkZa0uQ"
     message = "🚀 PhantomScalerX is now live on Render!"
     url = f"https://api.telegram.org/bot{token}/sendMessage"
     data = {"chat_id": chat_id, "text": message}
@@ -13,6 +15,7 @@ def send_startup_message():
     print(f"Token starts with: {token[:10]}")
     print(f"Chat ID: {chat_id}")
     print(f"URL: {url}")
+    
     try:
         response = requests.post(url, data=data)
         print("Telegram response:", response.status_code, response.text)
